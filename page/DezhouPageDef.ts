@@ -13,11 +13,7 @@ module gamedezhou.page {
 		static myinit(str: string) {
 			super.myinit(str);
 			DezhouClip.init();
-			if (WebConfig.baseplatform == PageDef.BASE_PLATFORM_TYPE_NQP) {
-				PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU] = DezhouPage;
-			} else {
-				PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU] = DezhouPageOld;
-			}
+			PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU] = DezhouPage;
 			PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU_MAP] = DezhouMapPage;
 			PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU_RULE] = DezhouRulePage;
 			PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU_TAKE] = DezhouTakePage;
