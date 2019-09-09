@@ -13,11 +13,7 @@ module gamedezhou.page {
 		static myinit(str: string) {
 			super.myinit(str);
 			DezhouClip.init();
-			if (WebConfig.baseplatform == PageDef.BASE_PLATFORM_TYPE_NQP) {
-				PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU] = DezhouPage;
-			} else {
-				PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU] = DezhouPageOld;
-			}
+			PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU] = DezhouPage;
 			PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU_MAP] = DezhouMapPage;
 			PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU_RULE] = DezhouRulePage;
 			PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU_TAKE] = DezhouTakePage;
@@ -38,6 +34,15 @@ module gamedezhou.page {
 				PathGameTongyong.atlas_game_ui_tongyong + "logo.atlas",
 				PathGameTongyong.ui_tongyong_sk + "HeGuan2.sk",
 				PathGameTongyong.ui_tongyong_sk + "HeGuan2.png",
+				Path_game_dezhou.ui_dezhou + "sk/depk_3.png",
+				Path_game_dezhou.ui_dezhou + "sk/depk_3.sk",
+				Path_game_dezhou.ui_dezhou + "sk/dzpk_0.png",
+				Path_game_dezhou.ui_dezhou + "sk/dzpk_0.sk",
+				Path_game_dezhou.ui_dezhou + "sk/dzpk_1.png",
+				Path_game_dezhou.ui_dezhou + "sk/dzpk_1.sk",
+				Path_game_dezhou.ui_dezhou + "sk/dzpk_2.png",
+				Path_game_dezhou.ui_dezhou + "sk/dzpk_2.sk",
+
 
 				Path.map + 'pz_dezhou.png',
 				Path.map_far + 'bg_dezhou.jpg'
