@@ -3,7 +3,7 @@
 */
 module gamedezhou.page {
 	export class DezhouPageOld extends game.gui.base.Page {
-		private _viewUI: ui.game_ui.dezhou.DeZhou_HUDUI;
+		private _viewUI: ui.nqp.game_ui.dezhou.DeZhou_HUDUI;
 		private _player: any;
 		private _leastTmep: any = ["1/2", "5/10", "20/40", "50/100"];
 		private _needMoney: any = [50, 100, 500, 1000];
