@@ -525,7 +525,7 @@ module gamedezhou.page {
                 TongyongPageDef.ins.alertRecharge(StringU.substitute("老板，您的金币少于{0}哦~\n补充点金币去大杀四方吧~", this._needChip[this._dezhouStory.mapLv][0]), () => {
                     this._game.uiRoot.general.open(DatingPageDef.PAGE_CHONGZHI);
                 }, () => {
-                }, false, PathGameTongyong.ui_tongyong_general + "btn_cz.png");
+                }, false, TongyongPageDef.TIPS_SKIN_STR['cz']);
             }
         }
 
@@ -537,7 +537,7 @@ module gamedezhou.page {
                 TongyongPageDef.ins.alertRecharge(StringU.substitute("老板，您的金币少于{0}哦~\n补充点金币去大杀四方吧~", mainPlayer.playerInfo.dezhouMoney), () => {
                     this._game.uiRoot.general.open(DatingPageDef.PAGE_CHONGZHI);
                 }, () => {
-                }, false, PathGameTongyong.ui_tongyong_general + "btn_cz.png");
+                }, false,TongyongPageDef.TIPS_SKIN_STR['cz']);
             }
         }
 
