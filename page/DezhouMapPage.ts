@@ -65,6 +65,7 @@ module gamedezhou.page {
                 this._dezhouMgr.on(DezhouMgr.DEAR_CARD_OVER, this, this.onDealCardOver);
             }
             this._game.playMusic(Path.music + "dezhou/bgplay.mp3", 0);
+            this._viewUI.btn_menu.left = this._game.isFullScreen ? 25 : 10;
         }
 
         // 页面打开时执行函数
