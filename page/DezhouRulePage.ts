@@ -3,7 +3,7 @@
 */
 module gamedezhou.page {
 	export class DezhouRulePage extends game.gui.base.Page {
-		private _viewUI: ui.game_ui.dezhou.DeZhou_GuiZeUI;
+		private _viewUI: ui.nqp.game_ui.dezhou.DeZhou_GuiZeUI;
 		static readonly TYPE_WANFA_JIESHAO: number = 0;
 		static readonly TYPE_CARD_TYPE: number = 1;
 		static readonly TYPE_SETTLEMENT: number = 2;

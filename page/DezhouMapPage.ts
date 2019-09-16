@@ -14,7 +14,7 @@ module gamedezhou.page {
     }
     const MAX_SEATS_COUNT = 9 // 最大座位数
     export class DezhouMapPage extends game.gui.base.Page {
-        private _viewUI: ui.game_ui.dezhou.DeZhouUI;
+        private _viewUI: ui.nqp.game_ui.dezhou.DeZhouUI;
         private _dezhouStory: DezhouStory;
         private _betVal: number = 0;    //拉霸下注数额
         private _dezhouMgr: DezhouMgr;

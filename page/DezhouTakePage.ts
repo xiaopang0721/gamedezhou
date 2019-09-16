@@ -3,7 +3,7 @@
 */
 module gamedezhou.page {
 	export class DezhouTakePage extends game.gui.base.Page {
-		private _viewUI: ui.game_ui.dezhou.DaiRuUI;
+		private _viewUI: ui.nqp.game_ui.dezhou.DaiRuUI;
 		private _player: any;
 		private _takeValue: number = 0;
 		private _takeMoney: any = [[50, 400], [100, 2000], [500, 5000], [1000, 20000]]; //携带金币最大最小限制
