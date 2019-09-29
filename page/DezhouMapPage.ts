@@ -65,6 +65,7 @@ module gamedezhou.page {
                 this._dezhouMgr.on(DezhouMgr.DEAR_CARD_OVER, this, this.onDealCardOver);
             }
             this._game.playMusic(Path.music + "dezhou/bgplay.mp3", 0);
+            this._viewUI.btn_menu.left = this._game.isFullScreen ? 25 : 10;
         }
 
         // 页面打开时执行函数
@@ -197,9 +198,9 @@ module gamedezhou.page {
                         page.dataSource = DezhouPageDef.GAME_NAME;
                     });
                     break;
-                case this._viewUI.btn_qifu://祈福
-                    this._game.uiRoot.general.open(TongyongPageDef.PAGE_TONGYONG_QIFU);
-                    break;
+                // case this._viewUI.btn_qifu://祈福
+                //     this._game.uiRoot.general.open(TongyongPageDef.PAGE_TONGYONG_QIFU);
+                //     break;
                 case this._viewUI.img_take: //修改带钱
                     let config = ["192", "193", "194", "195"];
                     let val = config.indexOf(this._dezhouStory.mapLv.toString());
@@ -320,14 +321,14 @@ module gamedezhou.page {
             if (msg.type == Operation_Fields.OPRATE_GAME) {
                 switch (msg.reason) {
                     case Operation_Fields.OPRATE_GAME_QIFU_SUCCESS_RESULT:
-                        let dataInfo = JSON.parse(msg.data);
-                        //打开祈福动画界面
-                        this._game.uiRoot.general.open(TongyongPageDef.PAGE_TONGYONG_QIFU_ANI, (page) => {
-                            page.dataSource = StringU.substitute(PathGameTongyong.ui_tongyong_qifu + "f_{0}1.png", this._nameStrInfo[dataInfo.qf_id - 1]);
-                        });
-                        //相对应的玩家精灵做出反应
-                        this._qifuTypeImgUrl = StringU.substitute(PathGameTongyong.ui_tongyong_qifu + "f_{0}2.png", this._nameStrInfo[dataInfo.qf_id - 1]);
-                        this.onUpdateUnit(dataInfo.qifu_index);
+                        // let dataInfo = JSON.parse(msg.data);
+                        // //打开祈福动画界面
+                        // this._game.uiRoot.general.open(TongyongPageDef.PAGE_TONGYONG_QIFU_ANI, (page) => {
+                        //     page.dataSource = StringU.substitute(PathGameTongyong.ui_tongyong_qifu + "f_{0}1.png", this._nameStrInfo[dataInfo.qf_id - 1]);
+                        // });
+                        // //相对应的玩家精灵做出反应
+                        // this._qifuTypeImgUrl = StringU.substitute(PathGameTongyong.ui_tongyong_qifu + "f_{0}2.png", this._nameStrInfo[dataInfo.qf_id - 1]);
+                        // this.onUpdateUnit(dataInfo.qifu_index);
                         break;
                 }
             }
@@ -413,8 +414,7 @@ module gamedezhou.page {
 
         //发完牌了
         private onDealCardOver(): void {
-            this._viewUI.view_paixie.visible = false;
-            this._viewUI.view_paixie.ani1.stop();
+            this._viewUI.view_paihe.ani2.stop();
         }
 
         private updateMapInfo(): void {
@@ -474,8 +474,7 @@ module gamedezhou.page {
                 this._viewUI.text_info.visible = true;
                 this._viewUI.text_roomtype.visible = true;
                 this._viewUI.text_mangzhu.visible = true;
-                this._viewUI.view_paixie.visible = true;
-                this._viewUI.view_paixie.ani1.play(1, true);
+                this._viewUI.view_paihe.ani2.play(0, true);
             }
             //发完牌了
             if (statue > MAP_STATUS.MAP_STATE_DEAR_CARD) {
@@ -525,7 +524,7 @@ module gamedezhou.page {
                 TongyongPageDef.ins.alertRecharge(StringU.substitute("老板，您的金币少于{0}哦~\n补充点金币去大杀四方吧~", this._needChip[this._dezhouStory.mapLv][0]), () => {
                     this._game.uiRoot.general.open(DatingPageDef.PAGE_CHONGZHI);
                 }, () => {
-                }, false, PathGameTongyong.ui_tongyong_general + "btn_cz.png");
+                }, true, TongyongPageDef.TIPS_SKIN_STR['cz']);
             }
         }
 
@@ -537,7 +536,7 @@ module gamedezhou.page {
                 TongyongPageDef.ins.alertRecharge(StringU.substitute("老板，您的金币少于{0}哦~\n补充点金币去大杀四方吧~", mainPlayer.playerInfo.dezhouMoney), () => {
                     this._game.uiRoot.general.open(DatingPageDef.PAGE_CHONGZHI);
                 }, () => {
-                }, false, PathGameTongyong.ui_tongyong_general + "btn_cz.png");
+                }, true,TongyongPageDef.TIPS_SKIN_STR['cz']);
             }
         }
 
@@ -875,8 +874,7 @@ module gamedezhou.page {
             this._viewUI.text_info.visible = false;
             this._viewUI.text_roomtype.visible = false;
             this._viewUI.text_mangzhu.visible = false;
-            this._viewUI.view_paixie.visible = false;
-            this._viewUI.view_paixie.ani1.stop();
+            this._viewUI.view_paihe.ani2.stop();
             this._viewUI.view_paihe.cards.visible = false;
             this._viewUI.xipai.visible = false;
             this._viewUI.add_bet.visible = false;

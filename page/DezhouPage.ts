@@ -21,6 +21,10 @@ module gamedezhou.page {
 				PathGameTongyong.atlas_game_ui_tongyong + "hud.atlas",
 				PathGameTongyong.atlas_game_ui_tongyong + "dating.atlas",
 				PathGameTongyong.atlas_game_ui_tongyong + "logo.atlas",
+				Path_game_dezhou.ui_dezhou + "sk/depk_3.png",
+				Path_game_dezhou.ui_dezhou + "sk/dzpk_0.png",
+				Path_game_dezhou.ui_dezhou + "sk/dzpk_1.png",
+				Path_game_dezhou.ui_dezhou + "sk/dzpk_2.png",
 
 			];
 			this._isNeedDuang = false;
@@ -129,7 +133,7 @@ module gamedezhou.page {
 			TongyongPageDef.ins.alertRecharge(StringU.substitute("老板，您的金币少于{0}哦~\n补充点金币去大杀四方吧~", limit), () => {
 				this._game.uiRoot.general.open(DatingPageDef.PAGE_CHONGZHI);
 			}, () => {
-			}, false, PathGameTongyong.ui_tongyong_general + "btn_cz.png");
+			}, true,TongyongPageDef.TIPS_SKIN_STR['cz']);
 		}
 
 		public close(): void {
