@@ -414,8 +414,7 @@ module gamedezhou.page {
 
         //发完牌了
         private onDealCardOver(): void {
-            this._viewUI.view_paixie.visible = false;
-            this._viewUI.view_paixie.ani1.stop();
+            this._viewUI.view_paihe.ani2.stop();
         }
 
         private updateMapInfo(): void {
@@ -475,8 +474,7 @@ module gamedezhou.page {
                 this._viewUI.text_info.visible = true;
                 this._viewUI.text_roomtype.visible = true;
                 this._viewUI.text_mangzhu.visible = true;
-                this._viewUI.view_paixie.visible = true;
-                this._viewUI.view_paixie.ani1.play(1, true);
+                this._viewUI.view_paihe.ani2.play(0, true);
             }
             //发完牌了
             if (statue > MAP_STATUS.MAP_STATE_DEAR_CARD) {
@@ -876,8 +874,7 @@ module gamedezhou.page {
             this._viewUI.text_info.visible = false;
             this._viewUI.text_roomtype.visible = false;
             this._viewUI.text_mangzhu.visible = false;
-            this._viewUI.view_paixie.visible = false;
-            this._viewUI.view_paixie.ani1.stop();
+            this._viewUI.view_paihe.ani2.stop();
             this._viewUI.view_paihe.cards.visible = false;
             this._viewUI.xipai.visible = false;
             this._viewUI.add_bet.visible = false;
