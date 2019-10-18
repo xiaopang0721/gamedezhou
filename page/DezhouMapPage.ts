@@ -71,6 +71,7 @@ module gamedezhou.page {
         // 页面打开时执行函数
         protected onOpen(): void {
             super.onOpen();
+
             this.updateViewUI();
             this.onUpdateUnitOffline();
             if (!this._dezhouStory.isReConnected) {
