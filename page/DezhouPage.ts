@@ -69,7 +69,7 @@ module gamedezhou.page {
 			this._viewUI.img_room2.on(LEvent.CLICK, this, this.onBtnClickWithTween);
 			this._viewUI.img_room3.on(LEvent.CLICK, this, this.onBtnClickWithTween);
 			this._viewUI.btn_join.on(LEvent.CLICK, this, this.onBtnClickWithTween);
-			(this._viewUI.view_hud as TongyongHudNqpPage).onOpen(this._game, DezhouPageDef.GAME_NAME);
+			(this._viewUI.view_hud as TongyongHudNqpPage).onOpen(this._game, DezhouPageDef.GAME_NAME, false);
 			for (let index = 0; index < this._viewUI.box_right.numChildren; index++) {
 				this._viewUI.box_right._childs[index].visible = true;
 				Laya.Tween.from(this._viewUI.box_right._childs[index], {
@@ -110,11 +110,11 @@ module gamedezhou.page {
 					}
 					this._game.uiRoot.HUD.open(DezhouPageDef.PAGE_DEZHOU_TAKE, (page) => { page.dataSource = 3; })
 					break;
-				case this._viewUI.btn_join:
-					let maplv = TongyongUtil.getJoinMapLv(DezhouPageDef.GAME_NAME, this._player.playerInfo.money);
-					if (!maplv) return;
-					this._game.uiRoot.HUD.open(DezhouPageDef.PAGE_DEZHOU_TAKE, (page) => { page.dataSource = this._mapLvConfig.indexOf(maplv); })
-					break;
+				// case this._viewUI.btn_join:
+				// 	let maplv = TongyongUtil.getJoinMapLv(DezhouPageDef.GAME_NAME, this._player.playerInfo.money);
+				// 	if (!maplv) return;
+				// 	this._game.uiRoot.HUD.open(DezhouPageDef.PAGE_DEZHOU_TAKE, (page) => { page.dataSource = this._mapLvConfig.indexOf(maplv); })
+				// 	break;
 				default:
 					break;
 			}
