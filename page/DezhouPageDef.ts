@@ -19,6 +19,7 @@ module gamedezhou.page {
 			PageDef._pageClassMap[DezhouPageDef.PAGE_DEZHOU_TAKE] = DezhouTakePage;
 
 			this["__needLoadAsset"] = [
+				DatingPath.atlas_dating_ui + "qifu.atlas",
 				PathGameTongyong.atlas_game_ui_tongyong + "hud.atlas",
 				PathGameTongyong.atlas_game_ui_tongyong + "general.atlas",
 				PathGameTongyong.atlas_game_ui_tongyong + "touxiang.atlas",
