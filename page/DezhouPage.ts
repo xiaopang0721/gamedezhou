@@ -133,7 +133,7 @@ module gamedezhou.page {
 			TongyongPageDef.ins.alertRecharge(StringU.substitute("老板，您的金币少于{0}哦~\n补充点金币去大杀四方吧~", limit), () => {
 				this._game.uiRoot.general.open(DatingPageDef.PAGE_CHONGZHI);
 			}, () => {
-			}, true,TongyongPageDef.TIPS_SKIN_STR['cz']);
+			}, true, TongyongPageDef.TIPS_SKIN_STR['cz']);
 		}
 
 		public close(): void {
@@ -143,8 +143,8 @@ module gamedezhou.page {
 				this._viewUI.img_room2.off(LEvent.CLICK, this, this.onBtnClickWithTween);
 				this._viewUI.img_room3.off(LEvent.CLICK, this, this.onBtnClickWithTween);
 				this._viewUI.btn_join.off(LEvent.CLICK, this, this.onBtnClickWithTween);
+				this._game.stopMusic();
 			}
-			this._game.stopMusic();
 
 			super.close();
 		}
