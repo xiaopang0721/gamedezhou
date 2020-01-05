@@ -42,12 +42,11 @@ module gamedezhou.page {
             super(v, onOpenFunc, onCloseFunc);
             this._isNeedDuang = false;
             this._asset = [
-                DatingPath.atlas_dating_ui + "qifu.atlas",
-                PathGameTongyong.atlas_game_ui_tongyong + "hud.atlas",
                 Path_game_dezhou.atlas_game_ui + "dezhou.atlas",
+                Path_game_dezhou.atlas_game_ui + "dezhou/effect/btn.atlas",
+                PathGameTongyong.atlas_game_ui_tongyong + "hud.atlas",
                 PathGameTongyong.atlas_game_ui_tongyong + "general.atlas",
                 PathGameTongyong.atlas_game_ui_tongyong + "touxiang.atlas",
-                Path_game_dezhou.atlas_game_ui + "dezhou/effect/btn.atlas",
                 PathGameTongyong.atlas_game_ui_tongyong + "pai.atlas",
                 PathGameTongyong.atlas_game_ui_tongyong + "qifu.atlas",
                 PathGameTongyong.atlas_game_ui_tongyong + "general/effect/fapai_1.atlas",
